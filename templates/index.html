@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="container bg-info p-4 col-6 mx-auto text-light">
+        <h1 class="text-warning">Dojo Survey</h1>
+        <form action="/add" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <tr>
+                    <td>Dojo Location:</td>
+                    <td>
+                        <select name="location" class="form-control">
+                            <option value="">--SELECT ONE--</option>
+                            <option value="San Jose">San Jose</option>
+                            <option value="Seattle">Seattle</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="Log Angeles">Log Angeles</option>
+                            <option value="Online">Online</option>
+                        </select>
+                    </td>
+                </tr>
+            </div>
+            <div class="form-group">
+                <tr>
+                    <td>Favorite Language</td>
+                    <td>
+                        <select name="fav_language" class="form-control">
+                            <option value="">--SELECT ONE--</option>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Python">Python</option>
+                            <option value="C++">C++</option>
+                        </select>
+                    </td>
+                </tr>
+            </div>
+            <div class="mb-3 d-flex justify-content-around">
+                <div>
+                    <p>Favorite Food:</p>
+                    <input type="radio" name="fav_food" value="Pizza">
+                    <label class="form-check-label" for="pizza">Pizza</label><br>
+                    <input type="radio" name="fav_food" value="Burger">
+                    <label class="form-check-label" for="burger">Burger</label><br>
+                    <input type="radio" name="fav_food" value="Taco">
+                    <label class="form-check-label" for="taco">Taco</label>
+                </div>
+                <div>
+                <p>Habbit: </p>
+                    <input type="checkbox" name="hobby" value="Watch movie">
+                    <label class="form-check-label" for="movie"> Watch movie</label><br>
+                    <input type="checkbox" name="hobby" value="Play soccer">
+                    <label class="form-check-label" for="soccer">Play soccer</label><br>
+                    <input type="checkbox" name="hobby" value="Shopping">
+                    <label class="form-check-label" for="shopping">Shopping</label>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <label for="comment">Comment (optional)</label>
+                <textarea class="form-control" placeholder="Leave a comment here..." name="comment"></textarea>
+            </div>
+            <div class="d-flex flex-row-reverse">
+                <input type="submit" class="btn btn-warning" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

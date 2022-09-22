@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="container bg-info p-4 col-6 mx-auto text-light">
+        <h1 class="mb-3 text-warning"><u>Submitted Info</u></h1>
+        <h4>Name:</h4>
+        <p>{{ name }}</p>
+        <h4>Dojo Location:</h4>
+        <p>{{ location }}</p>
+        <h4>Favorite Language:</h4>
+        <p>{{ fav_language }}</p>
+        <h4>Favorite Food:</h4>
+        <p>{{ fav_food }}</p>
+
+        <h4>Hobby:</h4>
+        <div class="d-flex">
+            {% for hobby in hobbies %}
+                <p class="mr-4">{{ hobby }}</p>
+            {% endfor %}
+        </div>
+        <h4>Comment:</h4>
+        <p>{{ comment }}</p>
+        <div class="d-flex flex-row-reverse">
+            <a href="/clear"><button class="btn btn-warning">Go Back</button></a>
+        </div>
+    </div>
+</body>
+</html>
